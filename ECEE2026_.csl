@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl-1.0" class="in-text" version="1.0" default-locale="en-US">
+  <info>
+    <title>ECEE2026</title>
+    <id>http://www.zotero.org/styles/ECEE2026</id>
+    <link href="http://www.zotero.org/styles/ECEE2026" rel="self"/>
+    <link href="http://www.zotero.org/styles/ieee" rel="template"/>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2026-03-12T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/"/>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="text" initialize-with="." delimiter=", "/>
+      <label form="short" prefix=", "/>
+    </names>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="container-title">
+    <text variable="container-title"/>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <citation>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography hanging-indent="true" line-spacing="1.0">
+    <layout>
+      <text macro="author"/>
+      <text macro="title" prefix=". "/>
+      <text macro="container-title" prefix=". "/>
+      <text macro="issued" prefix=" (" suffix=")."/>
+    </layout>
+  </bibliography>
+</style>
