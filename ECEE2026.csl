@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US">
+  <info>
+    <title>ECEE2026</title>
+    <id>http://www.zotero.org/styles/ECEE2026</id>
+    <link href="http://www.zotero.org/styles/ECEE2026" rel="self"/>
+    <link href="http://www.zotero.org/styles/ieee" rel="template"/>
+    <category citation-format="numeric"/>
+    <category field="engineering"/>
+    <updated>2026-03-12T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="long" name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter="; " delimiter-precedes-last="always" initialize="true"/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="doi">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+    </choose>
+  </macro>
+
+  <macro name="issn">
+    <choose>
+      <if variable="ISSN">
+        <text variable="ISSN" prefix="ISSN "/>
+      </if>
+    </choose>
+  </macro>
+
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+
+  <bibliography entry-spacing="0" hanging-indent="true" line-spacing="1">
+    <layout>
+      <text variable="citation-number" prefix="[" suffix="]&#9;"/>
+      <group delimiter="; " suffix="; ">
+        <text macro="author"/>
+      </group>
+      <group delimiter=", ">
+        <text variable="title"/>
+        <text variable="container-title" font-style="normal" form="long"/>
+        <group delimiter=" ">
+          <text value="Volume"/>
+          <text variable="volume"/>
+        </group>
+        <text macro="issued"/>
+        <text variable="page"/>
+        <text variable="number"/>
+        <text macro="issn"/>
+        <text macro="doi"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>
